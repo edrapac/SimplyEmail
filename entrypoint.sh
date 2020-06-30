@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eou pipefail
-./SimplyEmail.py
-exec "$@"
+./SimplyEmail.py "$@"
+/bin/bash
