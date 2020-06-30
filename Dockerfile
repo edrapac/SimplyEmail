@@ -30,5 +30,10 @@ RUN git clone -b master https://github.com/SimplySecurity/SimplyEmail.git  /opt/
 	cd /opt/SimplyEmail/ && \
 	./setup/setup.sh 
 
+COPY entrypoint.sh /opt/SimplyEmail/entrypoint.sh
+RUN chmod 777 /opt/SimplyEmail/entrypoint.sh
+
+RUN cat /opt/SimplyEmail/entrypoint.sh
+
 WORKDIR "/opt/SimplyEmail"
-ENTRYPOINT ["./SimplyEmail.py"]
+ENTRYPOINT ./entrypoint.sh
