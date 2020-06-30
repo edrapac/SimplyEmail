@@ -36,4 +36,4 @@ RUN chmod 777 /opt/SimplyEmail/entrypoint.sh
 RUN cat /opt/SimplyEmail/entrypoint.sh
 
 WORKDIR "/opt/SimplyEmail"
-ENTRYPOINT ./entrypoint.sh
+ENTRYPOINT python SimplyEmail.py -all -v -e $DOMAIN && /bin/bash
